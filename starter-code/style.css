@@ -48,7 +48,7 @@ h2 {
   border: 1px solid black;
   border-radius: 10px;
   float: left;
-  margin: 8%;
+  margin: 7%;
 }
 
 .name {
@@ -62,4 +62,5 @@ footer {
 img {
 	height: 200px;
   width: 150px;
+  border-radius: 10px;
 }

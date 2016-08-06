@@ -6,17 +6,35 @@ var gameBoard = document.getElementById('game-board');
 
 function createBoard() {
 
-  for (var i = 0; i < cards.length; i++) {
+  var shuffledDeck = shuffle(cards);
+
+  for (var i = 0; i < shuffledDeck.length; i++) {
     var cardEle = document.createElement('div');
 
     cardEle.className = 'card';
-    cardEle.setAttribute('data-card', cards[i]);
+    cardEle.setAttribute('data-card', shuffledDeck[i]);
     cardEle.addEventListener('click', isTwoCards);
     cardEle.innerHTML = "<img src='/home/wnamen/fundamentals/wdi-fundamentals-memorygame/starter-code/card_cover.jpg'>";
 
     gameBoard.appendChild(cardEle);
   }
 }
+
+function shuffle(arr) {
+  var currentIndex = arr.length, temporaryValue, randomIndex;
+
+  while (0 !== currentIndex) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+    temporaryValue = arr[currentIndex];
+    arr[currentIndex] = arr[randomIndex];
+    arr[randomIndex] = temporaryValue;
+  }
+
+  return arr;
+}
+
 
 function isMatch(cards) {
  (cards[0] === cards[1]) ? alert("You found a match!") : alert("Sorry, try again!");
