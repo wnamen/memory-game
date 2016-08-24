@@ -14,7 +14,7 @@ function createBoard() {
     cardEle.className = 'card';
     cardEle.setAttribute('data-card', shuffledDeck[i]);
     cardEle.addEventListener('click', isTwoCards);
-    cardEle.innerHTML = "<img src='/home/wnamen/fundamentals/wdi-fundamentals-memorygame/starter-code/card_cover.jpg'>";
+    cardEle.innerHTML = "<img src='card_cover.jpg'>";
 
     gameBoard.appendChild(cardEle);
   }
@@ -46,9 +46,9 @@ function isTwoCards() {
   console.log(this.getAttribute('data-card'));
 
   if (this.getAttribute('data-card') === 'king') {
-    this.innerHTML = "<img src='/home/wnamen/fundamentals/wdi-fundamentals-memorygame/starter-code/king_of_spades.png'>";
+    this.innerHTML = "<img src='king_of_spades.png'>";
   } else {
-    this.innerHTML = "<img src='/home/wnamen/fundamentals/wdi-fundamentals-memorygame/starter-code/queen_of_hearts.png'>";
+    this.innerHTML = "<img src='queen_of_hearts.png'>";
   }
 
   if (cardsInPlay.length === 2) {
